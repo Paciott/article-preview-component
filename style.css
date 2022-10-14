@@ -65,9 +65,10 @@ h1 {
 
 .user {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  gap: 1rem;
 }
 
 .userpic {
@@ -77,11 +78,10 @@ h1 {
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
-  margin-right: 0.5rem;
+  margin-left: 1rem;
 }
 
 .userinfo {
-  margin-right: 4rem;
   text-align: left;
 }
 
@@ -100,7 +100,6 @@ h1 {
 }
 
 .share {
-  background-image: url(/images/icon-share.svg);
   background-color: var(--Light-Grayish-Blue);
   background-repeat: no-repeat;
   background-position: center;
@@ -108,6 +107,68 @@ h1 {
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
+  cursor: pointer;
+  margin-right: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closed {
+  display: none;
+}
+
+.clicked {
+  background-color: var(--Desaturated-Dark-Blue);
+}
+
+.changed {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(2%)
+    hue-rotate(323deg) brightness(102%) contrast(101%);
+}
+
+.tooltip-text {
+  color: var(--Grayish-Blue);
+  font-size: 0.8rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tooltip-elements {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 3rem;
+}
+
+.social-icon {
+  cursor: pointer;
+}
+
+.tooltip-closed {
+  display: none;
+}
+
+.tooltip-open {
+  margin-top: 0.5rem;
+  min-height: 4rem;
+  width: 100%;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 footer {
@@ -131,6 +192,7 @@ footer a {
     flex-direction: row;
     max-width: 45rem;
     min-height: 18rem;
+    margin: 0 5rem;
   }
 
   .img {
@@ -138,11 +200,60 @@ footer a {
     border-bottom-left-radius: 0.5rem;
   }
 
-  .userinfo {
-    margin-right: 8rem;
+  .user {
+    margin-left: 1.5rem;
   }
 
   .userpic {
     margin: 0;
+  }
+
+  .closed {
+    display: flex;
+  }
+
+  .tooltip-elements {
+    background-color: var(--Very-Dark-Grayish-Blue);
+    position: absolute;
+    padding: 0.3rem 2rem;
+    border-radius: 0.5rem;
+    transform: translateX(-10rem);
+    top: 57%;
+  }
+
+  .tooltip-elements::after {
+    height: 1rem;
+    width: 1rem;
+    content: "";
+    position: absolute;
+    transform: translateX(5rem);
+    top: 2.8rem;
+    border-width: 1rem;
+    border-style: solid;
+    border-color: var(--Very-Dark-Grayish-Blue) transparent transparent
+      transparent;
+  }
+
+  .tooltip-open {
+    background-color: white;
+    max-width: 5rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .tooltip-elements {
+    top: 55%;
+  }
+}
+
+@media (min-width: 657px) {
+  .tooltip-elements {
+    top: 50%;
+  }
+}
+
+@media (min-width: 867px) {
+  .tooltip-elements {
+    top: 48%;
   }
 }
