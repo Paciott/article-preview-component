@@ -38,7 +38,7 @@ main {
 }
 
 .img {
-  background-image: url(./images/drawers.jpg);
+  background-image: url("images/drawers.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 14rem;
@@ -72,7 +72,7 @@ h1 {
 }
 
 .userpic {
-  background-image: url(./images/avatar-michelle.jpg);
+  background-image: url("images/avatar-michelle.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 50%;
